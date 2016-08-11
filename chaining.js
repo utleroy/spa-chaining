@@ -1,10 +1,10 @@
 var integers = [13, 25, 6, 3, 11, 2, 18, 7, 21, 1, 29, 20, 12, 8];
+console.log("original array of numbers", integers)
 
-// Sort the numbers in descending order (10, 9, 8, 7, etc).
-  var descending = integers.sort(function(a,b) {
-    return b-a
-  })
-  console.log("Sort the numbers in descending order (10, 9, 8, 7, etc).",descending);
+var descending = integers.sort(function(a,b) {
+  return b-a
+})
+console.log("Sort the numbers in descending order: ",descending);
 
 
 for (var i = 0; i < integers.length; i++) {
@@ -13,26 +13,20 @@ for (var i = 0; i < integers.length; i++) {
   }
 }
 
-console.log("Remove any integers greater than 19.", descending)
+console.log("Remove any integers greater than 19: ", descending)
 
-// Multiply each remaining number by 1.5 and then subtract 1.
 
 var multiply = integers.map(function(num) {
   return num * 1.5 - 1;
 })
-console.log("Multiply each remaining number by 1.5 and then subtract 1.", multiply)
-
-// Then output (either in the DOM or the console) the sum of all the resulting numbers.
+console.log("Multiply each remaining number by 1.5 and then subtract 1: ", multiply)
 
 
+var sum = multiply
+var add = sum.reduce(function(a, b) {
+  return a + b;
+});
+console.log("sum of all the resulting numbers: ",add)
 
-
-
-
-
-
-
-
-// Using one single line of JavaScript code, complete the following tasks on the array of integers below.
-
-// var integers = [13, 25, 6, 3, 11, 2, 18, 7, 21, 1, 29, 20, 12, 8];
+var display = document.getElementById("output")
+display.innerHTML += "<div>sum of all the resulting numbers:</div><h1>" + add + "</h1>"
